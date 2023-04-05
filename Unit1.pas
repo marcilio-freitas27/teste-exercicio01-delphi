@@ -19,7 +19,7 @@ type
     [TearDown]
     procedure TearDown;
     [Test]
-    // laterar nome do caso
+    // alterar nome do caso
     [TestCase('Caso 01 - Dobro','1,2')]
     [TestCase('Caso 02 - Dobro','2,4')]
     [TestCase('Caso 03 - Dobro','3,6')]
@@ -27,11 +27,17 @@ type
     // renomear o teste
     procedure TestDobro1(const Entrada, Saida : Integer);
 
-//    [Test]
-//    [TestCase('Caso 02 - Dobro','2,4')]
-//    [TestCase('Caso 03 - Dobro','3,6')]
-//    [TestCase('Caso 04 - Dobro','-5,-10')]
-//    procedure TestArea(const Base, Altura: Integer, cons Saida: Integer);
+    [Test]
+    [TestCase('Caso 02 - Area','2,4,8')]
+    [TestCase('Caso 03 - Area','3,6,18')]
+    [TestCase('Caso 04 - Area','-5,-10, 50')]
+    procedure TestArea(const Base, Altura, Saida : Integer);
+
+    [Test]
+    procedure TestDesconto(const Valor, Desconto, Saida : Integer);
+
+    [Test]
+    procedure TestMaior(const Primeiro, Segundo, Terceiro, Saida: Integer);
   end;
 
 implementation
@@ -48,12 +54,17 @@ begin
 end;
 
 //método de teste
-// ctrl + shift + c - completar o que falta
-// declara mais de um variavel e tipa uma única vez
-//procedure TTestExercicio01.TestArea(const Base, Altura: Integer, const Saida: Integer);
-//begin
-//  Assert.AreEqual(exercicio01.Area(Base, Altura));
-//end;
+ //ctrl + shift + c - completar o que falta
+ //declara mais de um variavel e tipa uma única vez
+procedure TTestExercicio01.TestArea(const Base, Altura, Saida: Integer);
+begin
+  Assert.AreEqual(exercicio01.Area(Base, Altura), Saida);
+end;
+
+procedure TTestExercicio01.TestDesconto(const Valor, Desconto, Saida: Integer);
+begin
+
+end;
 
 procedure TTestExercicio01.TestDobro1(const Entrada, Saida: Integer);
 begin
@@ -62,7 +73,12 @@ begin
   Assert.AreEqual(exercicio01.Dobro(Entrada), Saida);
 end;
 
+procedure TTestExercicio01.TestMaior(const Primeiro, Segundo, Terceiro,
+  Saida: Integer);
+begin
+
+end;
+
 initialization
   TDUnitX.RegisterTestFixture(TTestExercicio01);
-
 end.
