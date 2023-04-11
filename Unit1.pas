@@ -37,6 +37,8 @@ type
     procedure TestDesconto(const Valor, Desconto, Saida : Integer);
 
     [Test]
+    [TestCase('Caso 01 - Maior','3,2,1,3')]
+    [TestCase('Caso 02 - Maior','1,3,2,3')]
     procedure TestMaior(const Primeiro, Segundo, Terceiro, Saida: Integer);
   end;
 
@@ -76,7 +78,7 @@ end;
 procedure TTestExercicio01.TestMaior(const Primeiro, Segundo, Terceiro,
   Saida: Integer);
 begin
-
+    Assert.AreEqual(exercicio01.Maior(Primeiro, Segundo, Terceiro), Saida);
 end;
 
 initialization

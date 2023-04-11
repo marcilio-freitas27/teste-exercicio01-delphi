@@ -9,8 +9,8 @@ type
   public
     function Dobro(ANumero: Integer): Integer;
     function Area(ANumero, BNumero: Integer): Integer;
-    function Desconto(Valor, Desconto: Integer): Integer;
-    function Maior(Primeiro, Segundo, Terceiro: Integer): Integer;
+    function Desconto(Valor, Desconto: Integer): Single;
+    function Maior(const Primeiro, Segundo, Terceiro: Integer): Integer;
   end;
 
 implementation
@@ -21,7 +21,7 @@ begin
   Result := ANumero * BNumero;
 end;
 
-function TExercicio01.Desconto(Valor, Desconto: Integer): Integer;
+function TExercicio01.Desconto(Valor, Desconto: Integer): Single;
 begin
 
 end;
@@ -32,9 +32,23 @@ begin
 end;
 
 
-function TExercicio01.Maior(Primeiro, Segundo, Terceiro: Integer): Integer;
+function TExercicio01.Maior(const Primeiro, Segundo, Terceiro: Integer): Integer;
 begin
-
+  if(Primeiro > Segundo) and (Primeiro > Terceiro) then
+  begin
+    Result := Primeiro;
+  end
+  else
+  begin
+    if(Segundo > Primeiro) and (Segundo > Terceiro) then
+    begin
+      Result := Segundo;
+    end
+    else
+    begin
+      Result := Terceiro;
+    end;
+  end;
 end;
 
 end.
