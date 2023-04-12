@@ -1,0 +1,13 @@
+TDD - tecnica para desenvolver um teste
+Test Driven-Development
+
+Teste unitário
+É necessário um teste pra cada funcionalidade, unitário, testar cada rotina
+Testa a classe
+
+
+Levantamento de requisitos
+Protótipo
+Desenvolvimento
+Testes
+Entrega

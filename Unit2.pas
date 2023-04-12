@@ -17,6 +17,7 @@ implementation
 
 //criando funcao Dobro
 function TExercicio01.Area(ANumero, BNumero: Integer): Integer;
+//retorno da funcao
 begin
   Result := ANumero * BNumero;
 end;
